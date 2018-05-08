@@ -1,11 +1,11 @@
 {
     "paths": {
-        "controllers": "src/controllers",
-        "models": "src/models",
-        "routes": "src/routes"
+        "controller": "src/controllers",
+        "model": "src/models",
+        "route": "src/routes"
     },
     "project": "express",
     "pattern": "mvc",
     "type": "API",
-    "method": "insert"
+    "method": "add"
 }
