@@ -1,29 +1,40 @@
 // *** controller ***
 
-var bcrypt = require('bcrypt')
-var mongoose = require('mongoose')
-
-var User = require('../models/User')
+const bcrypt = require('bcrypt')
+const mongoose = require('mongoose')
+const User = require('../models/User')
 
 module.exports.create = (req, res) => {
-  let data = req.body
-  let user = new User()
-  user.name = data.name
-  user.email = data.email
-  user.lastname = data.lastname
-  user.password = bcrypt.hashSync(data.password, 10)
-  user.save((err, user) => {
-      if (err) return res.sendStatus(503)
+  const { name, email, lastname, password } = req.body
+  const user = new User()
+  user.name = name
+  user.email = email
+  user.lastname = lastname
+  user.password = bcrypt.hashSync(password, 10)
+  user.save()
+    .then((user) => {
       return res.json(user)
-  });
+    })
+    .catch((e) => {
+      return res.sendStatus(500)
+    })
 }
 
 module.exports.login = function (req,res) {
-  let data = req.body
-  User.findOne({email:data.email}).then((user, err) => {
-    if(err) return res.sendStatus(503)
-    if(!user) return res.sendStatus(404)
-    if (bcrypt.compareSync(data.password, user.password)) return res.json(user)
-    return res.sendStatus(401)
-  })
+  const { email, password} = req.body
+  User.findOne({ email })
+    .then((user, err) => {
+      if (err) {
+        return res.sendStatus(503)
+      }
+      
+      if (!user) {
+        return res.sendStatus(404)
+      }
+      
+      if (bcrypt.compareSync(password, user.password)) { 
+        return res.json(user)
+      }
+      return res.sendStatus(401)
+    })
 }
