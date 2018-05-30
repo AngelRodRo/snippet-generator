@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const myLibrary = require('../lib/index.js');
-myLibrary.snippet()
+const sniptor = require('../lib/index.js');
+sniptor.snippet()
     .catch(e => {
         console.error(e)
     })

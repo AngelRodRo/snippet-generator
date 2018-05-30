@@ -22,7 +22,7 @@
   },
   "author": "",
   "bin": {
-    "snip": "./bin/global.js"
+    "sniptor": "./bin/global.js"
   },
   "license": "ISC",
   "preferGlobal": true
