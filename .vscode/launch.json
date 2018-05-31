@@ -12,7 +12,10 @@
             "program": "${workspaceFolder}/bin/global.js",
             "args": [
                 "login-normal"
-            ]
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            }
         }
     ]
 }
