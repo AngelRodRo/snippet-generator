@@ -96,16 +96,16 @@ User.findOne({ email })
 ### Route
 
 ```javascript
-    // *** route ***
+// *** route ***
 
-    const userController = require('../controllers/userController');
-    const express = require('express');
-    const router = express.Router();
+const userController = require('../controllers/userController');
+const express = require('express');
+const router = express.Router();
 
-    router.post("/user", userController.create)
-    router.post("/login", userController.login)
+router.post("/user", userController.create)
+router.post("/login", userController.login)
 
-    module.exports = router;
+module.exports = router;
 ```
 
 3. Configuration
