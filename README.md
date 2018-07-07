@@ -15,87 +15,87 @@ For to install each file accordint to type it's neccesary define a comment in th
 
 ### Model
 
-```
-    // *** model ***
-    const mongoose = require("mongoose");
-    const Schema = mongoose.Schema;
+```javascript
+// *** model ***
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-    const UserSchema = new Schema({
-    name: {
-        type: String, 
-        unique: true, 
-        required: "Name is required"
-    },
-    lastname: {
-        type: String, 
-        unique: true, 
-        required: "Lastname is required"
-    },
-    email: {
-        type: String, 
-        unique: true, 
-        required: "Email is required"
-    },
-    password: { 
-        type: String, 
-        required: "Password is required"
-    },
-    createdAt: { 
-        type: Date, 
-        default: Date.now
-    }
-    });
+const UserSchema = new Schema({
+name: {
+    type: String, 
+    unique: true, 
+    required: "Name is required"
+},
+lastname: {
+    type: String, 
+    unique: true, 
+    required: "Lastname is required"
+},
+email: {
+    type: String, 
+    unique: true, 
+    required: "Email is required"
+},
+password: { 
+    type: String, 
+    required: "Password is required"
+},
+createdAt: { 
+    type: Date, 
+    default: Date.now
+}
+});
 
-    module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("User", UserSchema);
 ```
 
 ### Controller
 
-```
-    // *** controller ***
-    const bcrypt = require('bcrypt')
-    const mongoose = require('mongoose')
-    const User = require('../models/User')
+```javascript
+// *** controller ***
+const bcrypt = require('bcrypt')
+const mongoose = require('mongoose')
+const User = require('../models/User')
 
-    module.exports.create = (req, res) => {
-    const { name, email, lastname, password } = req.body
-    const user = new User()
-    user.name = name
-    user.email = email
-    user.lastname = lastname
-    user.password = bcrypt.hashSync(password, 10)
-    user.save()
-        .then((user) => {
+module.exports.create = (req, res) => {
+const { name, email, lastname, password } = req.body
+const user = new User()
+user.name = name
+user.email = email
+user.lastname = lastname
+user.password = bcrypt.hashSync(password, 10)
+user.save()
+    .then((user) => {
+    return res.json(user)
+    })
+    .catch((e) => {
+    return res.sendStatus(500)
+    })
+}
+
+module.exports.login = function (req,res) {
+const { email, password} = req.body
+User.findOne({ email })
+    .then((user, err) => {
+    if (err) {
+        return res.sendStatus(503)
+    }
+    
+    if (!user) {
+        return res.sendStatus(404)
+    }
+    
+    if (bcrypt.compareSync(password, user.password)) { 
         return res.json(user)
-        })
-        .catch((e) => {
-        return res.sendStatus(500)
-        })
     }
-
-    module.exports.login = function (req,res) {
-    const { email, password} = req.body
-    User.findOne({ email })
-        .then((user, err) => {
-        if (err) {
-            return res.sendStatus(503)
-        }
-        
-        if (!user) {
-            return res.sendStatus(404)
-        }
-        
-        if (bcrypt.compareSync(password, user.password)) { 
-            return res.json(user)
-        }
-        return res.sendStatus(401)
-        })
-    }
+    return res.sendStatus(401)
+    })
+}
 ```
 
 ### Route
 
-```
+```javascript
     // *** route ***
 
     const userController = require('../controllers/userController');
@@ -109,7 +109,6 @@ For to install each file accordint to type it's neccesary define a comment in th
 ```
 
 3. Configuration
-
 
 
 3. Changelogs
