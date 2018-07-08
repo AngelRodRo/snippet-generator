@@ -117,7 +117,7 @@ module.exports = router;
 
 ## Configuration
 
-For start to use the sniptor, you need a config file, here you especify the next fields:
+For start to use the sniptor, you need a config file (config.json) in your project, it must to have the next fields:
 
 - **Paths:** Path for components of your app (Controller, Model, Route) 
 - **Project:** Framework used (Express, Loopback, etc)
@@ -127,7 +127,7 @@ For start to use the sniptor, you need a config file, here you especify the next
     * Add: Insert the snippet directly in your project, it mean, it create a new file for each file type  (Model, Controller, Route)
 
 
-#### config.json
+Your **config.json** must looks like this
 ```JSON
 {
     "paths": {
