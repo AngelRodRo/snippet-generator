@@ -108,11 +108,34 @@ router.post("/login", userController.login)
 module.exports = router;
 ```
 
-3. Configuration
+### Configuration
 
+For start to use the sniptor, you need a config file, here you especify, the next fields:
 
-3. Changelogs
+- Paths: Path for components of your app (Controller, Model, Route) 
+- Project: Framework used (Express, Loopback, etc)
+- Pattern: Design pattern using like MVP, MVC, etc.
+- Type: Project Type (Webapp, API, WebService, etc)
+- Method:
+    * Add: Insert the snippet directly in your project, it mean create a new file for each type file (Model, Controller, Route)
 
-4. To Do
+```JSON
+{
+    "paths": {
+        "controller": "controllers",
+        "model": "models",
+        "route": "routes"
+    },
+    "project": "express",
+    "pattern": "mvc",
+    "type": "API",
+    "method": "add"
+}
+```
+NOTE: In the current version, it is important have the structure definied in the config.json.
+
+### Changelogs
+
+### To Do
 
     - Install dependencies per project
