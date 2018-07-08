@@ -112,13 +112,15 @@ module.exports = router;
 
 For start to use the sniptor, you need a config file, here you especify, the next fields:
 
-- ***Paths:*** Path for components of your app (Controller, Model, Route) 
-- ***Project:*** Framework used (Express, Loopback, etc)
-- ***Pattern:*** Design pattern using like MVP, MVC, etc.
-- ***Type:*** Project Type (Webapp, API, WebService, etc)
-- ***Method:***
+- **Paths:** Path for components of your app (Controller, Model, Route) 
+- **Project:** Framework used (Express, Loopback, etc)
+- **Pattern:** Design pattern using like MVP, MVC, etc.
+- **Type:** Project Type (Webapp, API, WebService, etc)
+- **Method:**
     * Add: Insert the snippet directly in your project, it mean create a new file for each type file (Model, Controller, Route)
 
+
+#### config.json
 ```JSON
 {
     "paths": {
