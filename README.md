@@ -115,7 +115,7 @@ router.post("/login", userController.login)
 module.exports = router;
 ```
 
-### Configuration
+## Configuration
 
 For start to use the sniptor, you need a config file, here you especify, the next fields:
 
@@ -143,8 +143,8 @@ For start to use the sniptor, you need a config file, here you especify, the nex
 ```
 **NOTE:** In the current version, it is important have the structure definied in the config.json.
 
-### Changelogs
+## Changelogs
 
-### To Do
+## To Do
 
 - Install dependencies per project
