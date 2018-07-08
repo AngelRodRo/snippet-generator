@@ -1,17 +1,24 @@
 # SNIPTOR
 
-The snippet generator allows install code snippet from a gihub project to another project, according to MVP structure.
+The sniptor allows install code snippet from a gihub project to another project, according to MVP structure or other structure you define! Let's start to reuse code of the more simple way.
 
 ## Installation
 
-Using ***NPM***
+Using **NPM**
 ```
 npm install --save sniptor
 ```
 
+## Usage
+
+````
+sniptor <snippet-name>
+````
+* snippet-name: The name of the snippet defined in the sniptor manager  
+
 ## Format
 
-For to install each file accordint to type it's neccesary define a comment in the top of the file.
+For to install each file according to type it's neccesary define a comment in the top of the file.
 
 #### Model
 
