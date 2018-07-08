@@ -117,7 +117,7 @@ For start to use the sniptor, you need a config file, here you especify, the nex
 - **Pattern:** Design pattern using like MVP, MVC, etc.
 - **Type:** Project Type (Webapp, API, WebService, etc)
 - **Method:**
-    * Add: Insert the snippet directly in your project, it mean create a new file for each type file (Model, Controller, Route)
+    * Add: Insert the snippet directly in your project, it mean, it create a new file for each file type  (Model, Controller, Route)
 
 
 #### config.json
