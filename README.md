@@ -18,7 +18,7 @@ sniptor <snippet-name>
 
 ## Format
 
-For to install each file according to type it's neccesary define a comment in the top of the file.
+For register a new snippet in the sniptor manager it's neccesary define a comment in the top of the file in your snippet project.
 
 #### Model
 
@@ -117,7 +117,7 @@ module.exports = router;
 
 ## Configuration
 
-For start to use the sniptor, you need a config file, here you especify, the next fields:
+For start to use the sniptor, you need a config file, here you especify the next fields:
 
 - **Paths:** Path for components of your app (Controller, Model, Route) 
 - **Project:** Framework used (Express, Loopback, etc)
@@ -141,7 +141,11 @@ For start to use the sniptor, you need a config file, here you especify, the nex
     "method": "add"
 }
 ```
-**NOTE:** In the current version, it is important have the structure definied in the config.json.
+**NOTES:** 
+In the current version it necessary the next points:
+    * Have the structure definied in the config.json.
+    * Create a config.json file in the destin project
+
 
 ## Changelogs
 
