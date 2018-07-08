@@ -6,7 +6,7 @@ The sniptor allows install code snippet from a gihub project to another project,
 
 Using **NPM**
 ```
-npm install --save sniptor
+npm install -g -S sniptor 
 ```
 
 ## Usage
