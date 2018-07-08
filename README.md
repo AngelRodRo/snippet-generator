@@ -13,7 +13,7 @@ npm install --save sniptor
 
 For to install each file accordint to type it's neccesary define a comment in the top of the file.
 
-### Model
+#### Model
 
 ```javascript
 // *** model ***
@@ -49,7 +49,7 @@ createdAt: {
 module.exports = mongoose.model("User", UserSchema);
 ```
 
-### Controller
+#### Controller
 
 ```javascript
 // *** controller ***
@@ -93,7 +93,7 @@ User.findOne({ email })
 }
 ```
 
-### Route
+#### Route
 
 ```javascript
 // *** route ***
