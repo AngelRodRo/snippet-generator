@@ -4,7 +4,7 @@ The snippet generator allows install code snippet from a gihub project to anothe
 
 ## Installation
 
-Using NPM
+Using ***NPM***
 ```
 npm install --save sniptor
 ```
@@ -132,10 +132,10 @@ For start to use the sniptor, you need a config file, here you especify, the nex
     "method": "add"
 }
 ```
-NOTE: In the current version, it is important have the structure definied in the config.json.
+**NOTE:** In the current version, it is important have the structure definied in the config.json.
 
 ### Changelogs
 
 ### To Do
 
-    - Install dependencies per project
+- Install dependencies per project
