@@ -143,8 +143,9 @@ Your **config.json** must looks like this
 ```
 **NOTES:** 
 In the current version it necessary the next points:
-    * Have the structure definied in the config.json.
-    * Create a config.json file in the destin project
+
+- Have the structure definied in the config.json.
+- Create a config.json file in the destination project
 
 
 ## Changelogs
