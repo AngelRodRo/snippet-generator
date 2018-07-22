@@ -81,22 +81,22 @@ module.exports.create = (req, res) => {
 }
 
 module.exports.login = function (req,res) {
-const { email, password} = req.body
-User.findOne({ email })
-    .then((user, err) => {
-        if (err) {
-            return res.sendStatus(503)
-        }
+    const { email, password} = req.body
+    User.findOne({ email })
+        .then((user, err) => {
+            if (err) {
+                return res.sendStatus(503)
+            }
 
-        if (!user) {
-            return res.sendStatus(404)
-        }
+            if (!user) {
+                return res.sendStatus(404)
+            }
 
-        if (bcrypt.compareSync(password, user.password)) { 
-            return res.json(user)
-        }
-        return res.sendStatus(401)
-    })
+            if (bcrypt.compareSync(password, user.password)) { 
+                return res.json(user)
+            }
+            return res.sendStatus(401)
+        })
 }
 ```
 
