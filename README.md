@@ -1,5 +1,7 @@
 # SNIPTOR
 
+**Version: 0.01**
+
 The sniptor allows install code snippet from a gihub project to another project, according to MVP structure or other structure you define! Let's start to reuse code of the more simple way.
 
 ## Installation
