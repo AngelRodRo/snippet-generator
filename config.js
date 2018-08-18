@@ -11,7 +11,7 @@ module.exports = (() => {
             config.host = "http://localhost:3000";
             break
         default:
-            config.host = "http://167.99.86.216:3000";
+            config.host = "http://142.93.121.211:3000";
             break
     }
     return config;
